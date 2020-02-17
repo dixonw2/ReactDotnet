@@ -1,0 +1,9 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(221, 42, 42);
+$background-color: green;
+
+.bodytest {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: $background-color;
+}

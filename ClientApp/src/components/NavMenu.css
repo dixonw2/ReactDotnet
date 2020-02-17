@@ -13,6 +13,28 @@ html {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .color-scheme {
+    background-color: green;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .color-scheme {
+    background-color: blue;
+    color: black;
+  }
+}
+
+.color-scheme {
+  background-color: aliceblue;
+}
+
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.test:hover {
+  background-color: green;
 }

@@ -3,6 +3,10 @@ a {
   color: #0366d6;
 }
 
+html {
+  background-color: #923433;
+}
+
 code {
   color: #E01A76;
 }
@@ -11,4 +15,18 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+@media (prefers-color-scheme: dark) {
+  .color-scheme {
+    background-color: black;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .color-scheme {
+    background-color: white;
+    color: black;
+  }
 }
