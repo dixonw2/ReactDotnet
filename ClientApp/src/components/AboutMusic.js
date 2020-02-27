@@ -37,7 +37,7 @@ export class AboutMusic extends React.Component {
                 <td>{index + 1}</td>
                 <td>{song.songName}</td>
                 <td>{song.songArtist}</td>
-                <td><a href={song.songLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
+                <td><a href={song.songAppleLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
               </tr>
             )}
           </tbody>
@@ -57,7 +57,7 @@ export class AboutMusic extends React.Component {
                 <td>{index + 1}</td>
                 <td>{song.songName}</td>
                 <td>{song.songArtist}</td>
-                <td><a href={song.songLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
+                <td><a href={song.songAppleLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
               </tr>
             )}
           </tbody>
