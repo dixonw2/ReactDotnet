@@ -20,6 +20,7 @@ export class AboutMusic extends React.Component {
 
   static renderFavoritesTable(favorites2017, favorites2018) {
     let itunesImg = "https://linkmaker.itunes.apple.com/embed/v1/app-icon.svg";
+    let spotifyImg = "https://www.freeiconspng.com/uploads/spotify-icon-2.png";
     return (
       <>
         <table className='table table-striped' aria-labelledby="tableLabel">
@@ -37,7 +38,9 @@ export class AboutMusic extends React.Component {
                 <td>{index + 1}</td>
                 <td>{song.songName}</td>
                 <td>{song.songArtist}</td>
-                <td><a href={song.songAppleLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
+                <td><a href={song.songAppleLink} rel="noopener noreferrer" target="_blank"><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a>
+                    <a href={song.songSpotifyLink} rel="noopener noreferrer" target="_blank"><img src={spotifyImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px", marginLeft: "3px" }} /></a>
+                </td>
               </tr>
             )}
           </tbody>
@@ -57,7 +60,9 @@ export class AboutMusic extends React.Component {
                 <td>{index + 1}</td>
                 <td>{song.songName}</td>
                 <td>{song.songArtist}</td>
-                <td><a href={song.songAppleLink}><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a></td>
+                <td><a href={song.songAppleLink} rel="noopener noreferrer" target="_blank"><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a>
+                    <a href={song.songSpotifyLink} rel="noopener noreferrer" target="_blank"><img src={spotifyImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px", marginLeft: "3px" }} /></a>
+                </td>
               </tr>
             )}
           </tbody>
