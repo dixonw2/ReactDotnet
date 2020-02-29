@@ -1,4 +1,7 @@
 import React from 'react';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+import { FavTable } from './FavTable';
 
 export class AboutMusic extends React.Component {
 
@@ -18,64 +21,26 @@ export class AboutMusic extends React.Component {
     this.populateFavoritesData();
   }
 
-  static renderFavoritesTable(favorites2017, favorites2018) {
-    let itunesImg = "https://linkmaker.itunes.apple.com/embed/v1/app-icon.svg";
-    let spotifyImg = "https://www.freeiconspng.com/uploads/spotify-icon-2.png";
+  renderButtons() {
     return (
-      <>
-        <table className='table table-striped' aria-labelledby="tableLabel">
-          <thead>
-            <tr>
-              <th style={{ width: "5%" }}>Number</th>
-              <th style={{ width: "45%" }}>Song</th>
-              <th style={{ width: "35%" }}>Artist</th>
-              <th style={{ width: "15%" }}>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            {favorites2017.map((song, index) =>
-              <tr key={song.songName}>
-                <td>{index + 1}</td>
-                <td>{song.songName}</td>
-                <td>{song.songArtist}</td>
-                <td><a href={song.songAppleLink} rel="noopener noreferrer" target="_blank"><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a>
-                    <a href={song.songSpotifyLink} rel="noopener noreferrer" target="_blank"><img src={spotifyImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px", marginLeft: "3px" }} /></a>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-        <table className='table table-striped' aria-labelledby="tabelLabel">
-          <thead>
-            <tr>
-              <th style={{ width: "5%" }}>Number</th>
-              <th style={{ width: "45%" }}>Song</th>
-              <th style={{ width: "35%" }}>Artist</th>
-              <th style={{ width: "15%" }}>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            {favorites2018.map((song, index) =>
-              <tr key={song.songName}>
-                <td>{index + 1}</td>
-                <td>{song.songName}</td>
-                <td>{song.songArtist}</td>
-                <td><a href={song.songAppleLink} rel="noopener noreferrer" target="_blank"><img src={itunesImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px" }} /></a>
-                    <a href={song.songSpotifyLink} rel="noopener noreferrer" target="_blank"><img src={spotifyImg} style={{ display: "inlineBlock", overflow: "hidden", width: "40px", height: "40px", marginLeft: "3px" }} /></a>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </>
-    );
+      <Tabs id="uncontrolled-tab-example">
+        <Tab eventKey="home" title="Favorites of 2017">
+          <FavTable year="2017" favorites={this.state.favorites2017} />
+        </Tab>
+        <Tab eventKey="profile" title="Favorites of 2018">
+          <FavTable year="2018" favorites={this.state.favorites2018} />
+        </Tab>
+        <Tab eventKey="contact" title="Favorites of 2019">
+          <FavTable year="2019" favorites={this.state.favorites2019} />
+        </Tab>
+      </Tabs>);
   }
 
   render() {
-    let contents = this.state.loading ? <p><em>Loading...</em></p> : AboutMusic.renderFavoritesTable(this.state.favorites2017, this.state.favorites2018);
+    let contents = this.state.loading ? <p><em>Loading...</em></p> : this.renderButtons();
     return (
       <div>
-        <h1 id="tableLabel" >Music</h1>
+        <h1 id="tableLabel">Music</h1>
         <p>{this.state.history}</p>
         <p>{this.state.genres}</p>
         {contents}
