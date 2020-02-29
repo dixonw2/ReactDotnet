@@ -184,7 +184,7 @@ namespace AboutMusic.Controller {
                                                           "TWICE",
                                                           "https://music.apple.com/us/album/love-foolish/1480249009?i=1480249128&app=music&ign-mpt=uo%3D4",
                                                           "https://open.spotify.com/track/5L002vJ4NC0lRM8RtncBBp"),
-                                                 new Song("Blow Me Away (feat. Jason Aalon Butler",
+                                                 new Song("Blow Me Away (feat. Jason Aalon Butler)",
                                                           "The Used",
                                                           "https://music.apple.com/us/album/blow-me-feat-jason-aalon-butler/1488189107?i=1488189112&app=music&ign-mpt=uo%3D4",
                                                           "https://open.spotify.com/track/5pvZGipNqXbamr7K8TVolA")
