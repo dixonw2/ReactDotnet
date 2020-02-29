@@ -2,7 +2,7 @@ import React from 'react';
 
 export const FavTable = props => (
     <>
-        <h2>Top 13 Favorite Songs of {props.year}</h2>
+        <h2 style={{marginTop: "10px", marginBottom: "10px", textAlign: "center"}}>Top {props.favorites.length} Favorite Songs of {props.year}</h2>
         <table className='table table-striped' aria-labelledby="tableLabel">
             <thead>
                 <tr>

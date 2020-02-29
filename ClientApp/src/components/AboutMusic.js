@@ -18,6 +18,7 @@ export class AboutMusic extends React.Component {
   }
 
   componentDidMount() {
+    document.title = "About: Music";
     this.populateFavoritesData();
   }
 
@@ -33,16 +34,22 @@ export class AboutMusic extends React.Component {
         <Tab eventKey="contact" title="Favorites of 2019">
           <FavTable year="2019" favorites={this.state.favorites2019} />
         </Tab>
-      </Tabs>);
+      </Tabs>
+    );
   }
 
   render() {
     let contents = this.state.loading ? <p><em>Loading...</em></p> : this.renderButtons();
+    let favExplanation = "Ever since 2017, I joined my friend in creating a \"Favorites of\" "
+      + "for the year.  I restrict what can be selected to strictly songs released in the current "
+      + "year and, with the exception of 2017, only one song per artist to prevent me being able to "
+      + "choose multiple songs off the same album."
     return (
       <div>
         <h1 id="tableLabel">Music</h1>
         <p>{this.state.history}</p>
         <p>{this.state.genres}</p>
+        <p>{favExplanation}</p>
         {contents}
       </div>
     );
